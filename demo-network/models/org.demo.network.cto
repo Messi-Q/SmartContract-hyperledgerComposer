@@ -1,0 +1,160 @@
+
+/**
+ * demo network
+ */
+
+namespace org.demo.network
+
+
+/****** concept ******/
+
+/**
+ * a node structrue to keep record of the transfer of ownership
+ */
+
+concept ownerNode {
+  o String userId
+  o String transferTime
+}
+
+/**
+ * basic information of resources to be returned
+ */
+
+ concept basicResourceInfo{
+    o String resourceId       /* serial number */
+    o String headline         /* resource name */
+    o String coverUrl optional    /* url of cover picture */
+    o Double readPrice        /* price to buy the read-right */
+    o Double ownershipPrice   /* price to buy the ownership */
+    o Integer readCount       /* the number of users who have bought this resource */
+    o Integer liked           /* how many times this resources have been marked as liked by users */
+ }
+
+
+
+/****** participant ******/
+ abstract participant User identified by userId {
+  o String userId
+}
+
+participant Customer extends User{
+  o String website
+  o Double token          /* education coin */
+}
+
+participant Regulator extends User{
+  o String firstName
+  o String lastName
+}
+
+
+
+/****** asset ******/
+
+/**
+ * resources that can be seen across-websites
+ */
+asset Resource identified by resourceId {
+  o String resourceId       /* serial number */
+  o String headline         /* resource name */
+  o String coverUrl optional    /* url of cover picture */
+  o Double readPrice        /* price to buy the read-right */
+  o Double ownershipPrice   /* price to buy the ownership */
+  --> Customer owner            /* current owner */
+  o ownerNode[] ownerChain optional /* a linked list structrue to keep record of the transfer of ownership */
+  o Integer readCount       /* the number of users who have bought this resource */
+  o Integer liked           /* how many times this resources have been marked as liked by users */
+}
+
+
+/****** transaction and events ******/
+
+/**
+ * set up demo
+ */
+
+transaction SetUpDemo{
+}
+
+/**
+ * contract 2: show information of all readable resources across-website
+ */
+
+ @returns(basicResourceInfo[])
+transaction ShowResourceInfoTransaction {
+}
+
+event ShowResourceInfoEvent{
+  o basicResourceInfo[] infos
+}
+
+/**
+ * contract 3: buy read-right
+ */
+
+transaction BuyReadRightTransaction {
+  --> Resource resource
+  --> Customer buyer
+}
+
+event BuyReadRightEvent{
+  --> Resource resource
+  --> Customer buyer
+}
+
+/**
+ * contract 4: buy ownership
+ */
+
+transaction BuyOwnershipTransaction {
+  --> Resource resource
+  --> Customer buyer
+}
+event BuyOwnershipEvent{
+  --> Resource resource
+  --> Customer buyer
+}
+
+/**
+ * contract 5: customer recharge
+ */
+
+transaction RechargeTransaction{
+  --> Customer customer
+  o Double rechargeToken
+}
+event RechargeEvent{
+  --> Customer customer
+  o Double rechargeToken
+  o Double afterRechargeToken
+}
+
+
+//contract 6: check if the intended reader have the readright
+// returns(Boolean)
+// transaction CheckReadRightTransaction {
+//   --> Resource resource
+//   --> Customer reader
+// }
+// event CheckReadRightEvent {
+//   --> Resource resource
+//   --> Customer reader
+//   o Boolean access
+// }
+
+
+/**
+ * contract 7: check if the intended reader have the ownership
+ */
+
+ @returns(Boolean)
+transaction CheckOwnershipTransaction {
+  --> Resource resource
+  --> Customer customer
+}
+event CheckOwnershipEvent {
+  --> Resource resource
+  --> Customer customer
+  o Boolean ownership
+}
