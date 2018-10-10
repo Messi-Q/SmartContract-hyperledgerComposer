@@ -1,26 +1,76 @@
-## 1.查看管理员中央账户
+## 1.查看资源信息
 
-用户标识符 email : centralbank@email.com
-
-用户余额 accountBalance : 0
-
-总共发行课程币数量 totalIssueToken: 0
+请求url Resource获取所有资源的具体信息。
 
 ```
 Curl:
 
-curl -X GET --header 'Accept: application/json' 'http://IP:3040/api/CentralBank'
+curl -X GET --header 'Accept: application/json' 'http://localhost:3000/api/Resource'
 
 GET Response：
 [
   {
-    "$class": "token.CentralBank",
-    "totalIssueToken": 222,
-    "email": "centralbank@email.com",
-    "accountBalance": 0.1065
+    "$class": "org.demo.network.Resource",
+    "resourceId": "A-6",
+    "headline": "block1",
+    "coverUrl": "http://img0.imgtn.bdimg.com/it/u=1127002307,2148588769&fm=26&gp=0.jpg",
+    "readPrice": 12,
+    "ownershipPrice": 15,
+    "owner": "resource:org.demo.network.Customer#A-peng",  //资源所有者ID
+    "ownerChain": [],
+    "readCount": 0,
+    "liked": 0
+  }
+]
+```
+
+请求url Resource/Id获取某个资源的具体信息，如：
+
+```
+Curl:
+
+curl -X GET --header 'Accept: application/json' 'http://localhost:3000/api/Resource/A-6'
+
+GET Response：
+[
+  {
+    "$class": "org.demo.network.Resource",
+    "resourceId": "A-6",
+    "headline": "block1",
+    "coverUrl": "http://img0.imgtn.bdimg.com/it/u=1127002307,2148588769&fm=26&gp=0.jpg",
+    "readPrice": 12,
+    "ownershipPrice": 15,
+    "owner": "resource:org.demo.network.Customer#A-peng",  //资源所有者ID
+    "ownerChain": [],
+    "readCount": 0,
+    "liked": 0
   }
 ]
 ```
 
 
+## 2.上传资源信息
 
+请求url Resource进行资源信息的上传，使用post请求，如：
+
+```
+Curl:
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"$class":"org.demo.network.Resource","resourceId":"A-10","headline":"https://rails365.oss-cn-shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png","readPrice":20,"ownershipPrice":100,"owner":"resource:org.demo.network.Customer#A-qian","readCount":0,"liked":0}' 'http://localhost:3000/api/Resource'
+
+
+GET Response：
+[
+  {
+    "$class": "org.demo.network.Resource",
+    "resourceId": "A-10",
+    "headline": "https://rails365.oss-cn-   shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png",
+    "readPrice": 20,
+    "ownershipPrice": 100,
+    "owner": "resource:org.demo.network.Customer#A-qian",
+    "ownerChain": [],
+    "readCount": 0,
+    "liked": 0
+  }
+]
+```
