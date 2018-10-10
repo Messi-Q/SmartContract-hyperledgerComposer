@@ -1,4 +1,4 @@
 # SmartContract-hyperledgerComposer
-The Smart Contracts based on Hyperledger Composer. 
+$esmp;$esmp;The Smart Contracts based on Hyperledger Composer. 
 
-Contracts involving rights management
+$esmp;$esmp;Contracts involving rights management
