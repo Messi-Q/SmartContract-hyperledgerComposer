@@ -49,7 +49,37 @@ GET Response：
 ```
 
 
-## 2.上传资源信息
+## 2.用户注册
+
+功能描述：输入用户个人信息，提交，在区块链上注册用户。
+
+需要提交的参数：
+
+用户Id： userId 注册网站： website 用户余额： Token（0）
+
+```
+POST JSON Parameters:
+{
+    "$class": "org.demo.network.Customer",
+    "website": "A",
+    "token": 0,
+    "userId": "A-Alice"
+}
+
+Curl:
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \ 
+    "$class":"org.demo.network.Customer", \
+    "website":"A", \
+    "token":0, \
+    "userId":"A-Alice" \ 
+ }' 'http://localhost:3000/api/Customer'
+
+```
+
+
+
+## 3.用户上传资源信息
 
 功能描述：输入资源信息，提交，上传成功显示资源信息。
 
@@ -91,7 +121,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 ```
 
 
-## 3.用户充值:用户提出一个充值请求
+## 4.用户提出一个充值请求
 
 功能描述：输入充值金额，提交，充值成功。
 
@@ -111,9 +141,9 @@ POST JSON Parameters:
 Curl:
 
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \ 
- "$class":"org.demo.network.RechargeTransaction",\ 
- "customer":"resource:org.demo.network.Customer#A-qian",\ 
- "rechargeToken":100 \ 
+    "$class":"org.demo.network.RechargeTransaction",\ 
+    "customer":"resource:org.demo.network.Customer#A-qian",\ 
+    "rechargeToken":100 \ 
  }' 'http://localhost:3000/api/RechargeTransaction'
 
 ```
