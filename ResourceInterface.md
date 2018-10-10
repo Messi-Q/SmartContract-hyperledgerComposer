@@ -55,7 +55,7 @@ GET Response：
 
 需要提交的参数：
 
-用户Id： userId 注册网站： website 用户余额： Token（0）
+用户Id： userId 注册网站： website 用户余额： token（0）
 
 ```
 POST JSON Parameters:
@@ -87,15 +87,13 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 资源Id：resourceId， 标题：headline， 图片：coverUrl, 阅读权价格：readPrice， 所有权价格：ownershipPrice
 
-请求url Resource进行资源信息的上传，使用post请求，如：
-
 ```
 POST JSON Parameters:
 {
     "$class": "org.demo.network.Resource",
     "resourceId": "A-10",
     "headline": "block1",
-    "coverUrl"："https://rails365.oss-cn-   shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png",
+    "coverUrl"："https://rails365.oss-cn-shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png",
     "readPrice": 20,
     "ownershipPrice": 100,
     "owner": "resource:org.demo.network.Customer#A-qian",
@@ -110,7 +108,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
     "$class":"org.demo.network.Resource", \ 
     "resourceId":"A-10", \ 
     "headline":"block1", \ 
-    "coverUrl"："https://rails365.oss-cn-   shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png", \ 
+    "coverUrl"："https://rails365.oss-cn-shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png", \ 
     "readPrice":20, \ 
     "ownershipPrice":100, \ 
     "owner":"resource:org.demo.network.Customer#A-qian", \ 
@@ -129,7 +127,6 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 用户ID: customer  充值金额: rechargeToken 
 
-
 ```
 POST JSON Parameters:
 {
@@ -147,3 +144,58 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
  }' 'http://localhost:3000/api/RechargeTransaction'
 
 ```
+
+
+## 5.1 阅读权的交易
+
+功能描述：输入要购买的资源id和购买用户id，实现阅读权的交易。
+
+需要提交的参数：
+
+资源id: resourceId  购买用户id： buyerId
+
+```
+POST JSON Parameters：
+{
+    "$class": "org.demo.network.BuyReadRightTransaction",
+    "resource": "org.demo.network.Resource#A-10",  //资源id
+    "buyer": "org.demo.network.Customer#A-peng",  //购买用户id
+}
+
+Curl：
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \ 
+    "$class": "org.demo.network.BuyReadRightTransaction", \ 
+    "resource":"org.demo.network.Resource#A-10", \ 
+    "buyer":"org.demo.network.Customer#A-peng" \ 
+ }' '
+
+```
+
+
+## 5.2 所有权的交易
+
+功能描述：输入要购买的资源id和购买用户id，实现阅读权的交易。
+
+需要提交的参数：
+
+资源id: resourceId  购买用户id： buyerId
+
+```
+POST JSON Parameters：
+{
+    "$class": "org.demo.network.BuyOwnershipTransaction",
+    "resource": "org.demo.network.Resource#A-10",  //资源id
+    "buyer": "org.demo.network.Customer#A-peng",  //购买用户id
+}
+
+Curl：
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \ 
+    "$class": "org.demo.network.BuyOwnershipTransaction", \ 
+    "resource":"org.demo.network.Resource#A-10", \ 
+    "buyer":"org.demo.network.Customer#A-peng" \ 
+ }' '
+
+```
+
