@@ -85,7 +85,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 需要提交的参数：
 
-资源Id：resourceId， 标题：headline， 图片：coverUrl, 阅读权价格：readPrice， 所有权价格：ownershipPrice
+资源Id：resourceId， 标题：headline， 图片：coverUrl, 阅读权价格：readPrice， 所有权价格：ownershipPrice， 所有人ID：owner
 
 ```
 POST JSON Parameters:
