@@ -259,7 +259,7 @@ async function RechargeTransaction(tx){
 
 
 /**
- * CheckOwnershipTransaction : check if the intended reader have the read right
+ * CheckOwnershipTransaction : check if the intended reader have the owner right
  * @param {org.demo.network.CheckOwnershipTransaction} tx
  * @returns {Boolean}
  * @transaction
