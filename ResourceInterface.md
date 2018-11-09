@@ -199,3 +199,16 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 ```
 
+
+## 阅读权的校验
+
+功能描述：对用户是否有某个资源的阅读权进行校验（CheckReadRightTransaction）。
+
+
+## 所有权的校验
+
+功能描述：对用户是否有某个资源的所有权进行校验（CheckOwnerShipTransaction）。
+
+
+
+
