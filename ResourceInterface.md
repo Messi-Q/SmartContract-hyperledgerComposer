@@ -16,7 +16,7 @@ GET Response：
     "coverUrl": "http://img0.imgtn.bdimg.com/it/u=1127002307,2148588769&fm=26&gp=0.jpg",
     "readPrice": 12,
     "ownershipPrice": 15,
-    "owner": "resource:org.demo.network.Customer#A-peng",  //资源所有者ID
+    "owner": "resource:org.demo.network.Customer#A-peng",  //Owner ID
     "ownerChain": [],
     "readCount": 0,
     "liked": 0
@@ -40,7 +40,7 @@ GET Response：
     "coverUrl": "http://img0.imgtn.bdimg.com/it/u=1127002307,2148588769&fm=26&gp=0.jpg",
     "readPrice": 12,
     "ownershipPrice": 15,
-    "owner": "resource:org.demo.network.Customer#A-peng",  //资源所有者ID
+    "owner": "resource:org.demo.network.Customer#A-peng",  //Owner ID
     "ownerChain": [],
     "readCount": 0,
     "liked": 0
@@ -158,8 +158,8 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 POST JSON Parameters：
 {
     "$class": "org.demo.network.BuyReadRightTransaction",
-    "resource": "org.demo.network.Resource#A-10",  //资源id
-    "buyer": "org.demo.network.Customer#A-peng",  //购买用户id
+    "resource": "org.demo.network.Resource#A-10",  //resource id
+    "buyer": "org.demo.network.Customer#A-peng",  //buyer id
 }
 
 Curl：
@@ -185,8 +185,8 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 POST JSON Parameters：
 {
     "$class": "org.demo.network.BuyOwnershipTransaction",
-    "resource": "org.demo.network.Resource#A-10",  //资源id
-    "buyer": "org.demo.network.Customer#A-peng",  //购买用户id
+    "resource": "org.demo.network.Resource#A-10",  //resource id
+    "buyer": "org.demo.network.Customer#A-peng",  //buyer id
 }
 
 Curl：
