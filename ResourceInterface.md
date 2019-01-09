@@ -93,7 +93,7 @@ POST JSON Parameters:
     "$class": "org.demo.network.Resource",
     "resourceId": "A-10",
     "headline": "block1",
-    "coverUrl"："https://rails365.oss-cn-shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png",
+    "coverUrl"："input.png",
     "readPrice": 20,
     "ownershipPrice": 100,
     "owner": "resource:org.demo.network.Customer#A-qian",
@@ -108,7 +108,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
     "$class":"org.demo.network.Resource", \ 
     "resourceId":"A-10", \ 
     "headline":"block1", \ 
-    "coverUrl"："https://rails365.oss-cn-shenzhen.aliyuncs.com/uploads/playlist/image/14/2018/b522189b81e2f94057269b60b3ffff1e.png", \ 
+    "coverUrl"："input.png", \ 
     "readPrice":20, \ 
     "ownershipPrice":100, \ 
     "owner":"resource:org.demo.network.Customer#A-qian", \ 
