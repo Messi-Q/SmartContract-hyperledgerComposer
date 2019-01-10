@@ -202,9 +202,9 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 功能描述：对用户是否有某个资源的所有权进行校验（CheckOwnerShipTransaction）。
 
 
+## 转移链
 
 ```
-
 {
   "$class": "org.demo.network.Resource",
   "resourceId": "A-6",
@@ -236,4 +236,5 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
     }
   ],
 }
+
 ```
