@@ -42,8 +42,6 @@ GET Response：
     "ownershipPrice": 15,
     "owner": "resource:org.demo.network.Customer#A-peng",  //Owner ID
     "ownerChain": [],
-    "readCount": 0,
-    "liked": 0
   }
 ]
 ```
