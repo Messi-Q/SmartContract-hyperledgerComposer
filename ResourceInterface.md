@@ -203,4 +203,37 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 
 
+```
 
+{
+  "$class": "org.demo.network.Resource",
+  "resourceId": "A-6",
+  "headline": "loc1",
+  "coverUrl": "http://img0.imgtn.bdimg.com/it/u=1127002307,2148588769&fm=26&gp=0.jpg",
+  "readPrice": 1,
+  "ownershipPrice": 2,
+  "owner": "resource:org.demo.network.Customer#A-qian",
+  "ownerChain": [
+    {
+      "$class": "org.demo.network.ownerNode",
+      "userId": "A-qian",
+      "transferTime": "FIRST_UPLOAD"
+    },
+    {
+      "$class": "org.demo.network.ownerNode",
+      "userId": "A-peng",
+      "transferTime": "2019-1-9 11:50:24"
+    },
+    {
+      "$class": "org.demo.network.ownerNode",
+      "userId": "B-Bob",
+      "transferTime": "2019-1-9 14:32:41"
+    },
+    {
+      "$class": "org.demo.network.ownerNode",
+      "userId": "C-Alice",
+      "transferTime": "2019-1-9 14:33:07"
+    }
+  ],
+}
+```
