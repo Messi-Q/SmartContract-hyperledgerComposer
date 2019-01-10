@@ -12,10 +12,10 @@ GET Response：
   {
     "$class": "org.demo.network.Resource",
     "resourceId": "A-6",
-    "headline": "block1",
-    "coverUrl": "http://img0.imgtn.bdimg.com/it/u=1127002307,2148588769&fm=26&gp=0.jpg",
-    "readPrice": 12,
-    "ownershipPrice": 15,
+    "headline": "loc1",
+    "coverUrl": "https://www.rails365.net/playlists/you-ren-de-mobx-shi-pin-jiao-cheng",
+    "readPrice": 1,
+    "ownershipPrice": 2,
     "owner": "resource:org.demo.network.Customer#A-peng",  //Owner ID
     "ownerChain": [],
   }
