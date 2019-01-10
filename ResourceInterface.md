@@ -93,9 +93,7 @@ POST JSON Parameters:
     "readPrice": 20,
     "ownershipPrice": 100,
     "owner": "resource:org.demo.network.Customer#A-qian",
-    "ownerChain": [],
-    "readCount": 0,
-    "liked": 0
+    "ownerChain": []
 }
 
 Curl:
@@ -108,8 +106,6 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
     "readPrice":20, \ 
     "ownershipPrice":100, \ 
     "owner":"resource:org.demo.network.Customer#A-qian", \ 
-    "readCount":0, \ 
-    "liked":0 \ 
 }' 'http://localhost:3000/api/Resource'
 
 ```
