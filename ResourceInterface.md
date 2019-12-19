@@ -149,7 +149,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 ```
 POST JSON Parameters：
 {
-    "$class": "org.demo.network.BuyReadRightTransaction",
+    "$class": "org.demo.network.BuyUsufructTransaction",
     "resource": "org.demo.network.Resource#A-10",  //resource id
     "buyer": "org.demo.network.Customer#A-peng",  //buyer id
 }
@@ -157,7 +157,7 @@ POST JSON Parameters：
 Curl：
 
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \ 
-    "$class": "org.demo.network.BuyReadRightTransaction", \ 
+    "$class": "org.demo.network.BuyUsufructTransaction", \ 
     "resource":"org.demo.network.Resource#A-10", \ 
     "buyer":"org.demo.network.Customer#A-peng" \ 
  }' '
